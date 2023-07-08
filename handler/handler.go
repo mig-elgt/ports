@@ -18,7 +18,7 @@ type handler struct {
 func New(storage ports.StorageService) http.Handler {
 	r := mux.NewRouter()
 	h := handler{storage}
-	r.HandleFunc("/v1/ports", h.CreatePort).Methods("GET")
+	r.HandleFunc("/v1/ports", h.CreatePort).Methods("POST")
 	return r
 }
 
