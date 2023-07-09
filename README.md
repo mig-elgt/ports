@@ -53,7 +53,7 @@ curl -i -X POST -H "Content-Type: application/json" \
 
 API Responses
 
-Status: 20 - Ok
+Status: 200 - Ok
 ```json
 {
     "name": "Ajman",
