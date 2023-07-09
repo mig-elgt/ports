@@ -38,5 +38,6 @@ func (h handler) CreatePort(w http.ResponseWriter, r *http.Request) {
 			WithError(codes.Internal, "Something went wrong...").Send()
 		return
 	}
+	logrus.Infof("Port created: %v", port)
 	sender.NewJSON(w, http.StatusOK).Send(&port)
 }

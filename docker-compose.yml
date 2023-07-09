@@ -18,16 +18,14 @@ services:
 
   ports:
     build:
-      context: ./posts
+      context: .
     ports:
       - "8080"
     networks:
       - app-tier
     labels:
       - "traefik.enable=true"
-      - "traefik.http.services.ports.loadbalancer.server.port=8080"
-      - "traefik.http.routers.ports.rule=Host(`ports.localhost`)"
-      - "traefik.http.routers.ports.service=ports"
+      - "traefik.http.routers.ports-service.rule=PathPrefix(`/v1/ports`)"
     deploy:
       resources:
         limits:
